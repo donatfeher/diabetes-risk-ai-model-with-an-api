@@ -1,44 +1,48 @@
-### 1. Klónozd vagy másold a kódot a helyi gépre
+## FastAPI-based Machine Learning Model Documentation
 
-Győződj meg róla, hogy a **main.py** és a szükséges modellfájlok (például `final_model.pkl`) elérhetők a könyvtárban, ahol dolgozol.
+This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
 
-### 2. Telepítsd a szükséges csomagokat
+### 1. Clone or Download the Code Locally
 
-Lépj be a terminálba, és lépj be abba a könyvtárba, ahol a FastAPI fájlod található. Telepítened kell néhány Python-csomagot:
+Ensure that **main.py** and the required model files (e.g., `final_model.pkl`) are available in the directory where you're working.
+
+### 2. Install Required Packages
+
+Open your terminal and navigate to the directory where your FastAPI file is located. You'll need to install a few Python packages:
 
 ```bash
 pip install fastapi uvicorn scikit-learn numpy
 ```
 
-### 3. Futtasd a FastAPI szervert
+### 3. Run the FastAPI Server
 
-Az alábbi parancs segítségével indíthatod el a FastAPI szervert. Figyelj, hogy a `main` a fájl neve, ahol a FastAPI alkalmazásod található:
+You can start the FastAPI server using the following command. Make sure that `main` is the name of the file where your FastAPI application is defined:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Ezzel elindítod a szervert, amely figyel a `http://127.0.0.1:8000` címen.
+This will launch the server, which listens on `http://127.0.0.1:8000`.
 
-### 4. API dokumentáció
+### 4. API Documentation
 
-A FastAPI automatikusan generál egy interaktív dokumentációs felületet. A böngésződben érheted el az alábbi URL-en:
+FastAPI automatically generates an interactive API documentation interface. You can access it in your browser at the following URL:
 
 ```bash
 http://127.0.0.1:8000/docs
 ```
 
-Itt kipróbálhatod az API végpontjait.
+Here, you can test the API endpoints.
 
-### 5. Predikció küldése
+### 5. Sending a Prediction Request
 
-A predikcióhoz használj egy `POST` kérést a következő URL-re:
+To make a prediction, use a `POST` request to the following URL:
 
 ```bash
 http://127.0.0.1:8000/predict
 ```
 
-Példa kérést küldhetsz a következő JSON-nel:
+You can send a sample request with the following JSON payload:
 
 ```json
 {
@@ -53,9 +57,9 @@ Példa kérést küldhetsz a következő JSON-nel:
 }
 ```
 
-### 6. Szerver válasza
+### 6. Server Response
 
-A szerver a predikciót JSON formátumban adja vissza, például így:
+The server will return the prediction in JSON format, such as:
 
 ```json
 {
@@ -63,14 +67,14 @@ A szerver a predikciót JSON formátumban adja vissza, például így:
 }
 ```
 
-### Gyakori hibák és megoldások
+### Common Errors and Solutions
 
-1. **`ModuleNotFoundError: No module named 'fastapi'`**: Ellenőrizd, hogy a szükséges csomagokat telepítetted a Python környezetedbe (`pip install fastapi uvicorn`).
-   
-2. **`ValueError: X has 8 features, but RandomForestClassifier is expecting 9 features`**: A modelled több bemeneti adatot vár. Ellenőrizd a modell működését és a bemeneti adatokat.
+1. **`ModuleNotFoundError: No module named 'fastapi'`**: Make sure the required packages are installed in your Python environment (`pip install fastapi uvicorn`).
 
-3. **Port foglaltság**: Ha a `8000` port foglalt, próbálj egy másik portot használni:
-   
+2. **`ValueError: X has 8 features, but RandomForestClassifier is expecting 9 features`**: The model expects more input data. Check the model's functionality and the input data.
+
+3. **Port Conflict**: If the `8000` port is already in use, try using a different port:
+
    ```bash
    uvicorn main:app --reload --port 8080
    ```
