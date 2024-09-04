@@ -1,3 +1,9 @@
+# FastAPI-based Machine Learning Model Documentation
+
+[Magyar verzió (Hungarian)](README_hu.md)
+
+This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
+
 ## FastAPI-based Machine Learning Model Documentation
 
 This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
