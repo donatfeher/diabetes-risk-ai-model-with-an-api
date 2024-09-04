@@ -4,10 +4,6 @@
 
 This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
 
-## FastAPI-based Machine Learning Model Documentation
-
-This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
-
 ### 1. Clone or Download the Code Locally
 
 Ensure that **main.py** and the required model files (e.g., `final_model.pkl`) are available in the directory where you're working.
