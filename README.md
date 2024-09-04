@@ -1,5 +1,3 @@
-Az alábbi dokumentáció alapján mások is könnyen futtathatják a FastAPI alapú gépi tanulás modellt. Íme a lépések, hogyan futtassák a kódot a saját környezetükben.
-
 ### 1. Klónozd vagy másold a kódot a helyi gépre
 
 Győződj meg róla, hogy a **main.py** és a szükséges modellfájlok (például `final_model.pkl`) elérhetők a könyvtárban, ahol dolgozol.
@@ -76,8 +74,3 @@ A szerver a predikciót JSON formátumban adja vissza, például így:
    ```bash
    uvicorn main:app --reload --port 8080
    ```
-
-### Összegzés
-
-Ezekkel a lépésekkel mások is könnyen futtathatják a kódodat, és használhatják a gépi tanulási modellt FastAPI-n keresztül. Ha további kérdés merülne fel, kérlek, jelezd!
-
