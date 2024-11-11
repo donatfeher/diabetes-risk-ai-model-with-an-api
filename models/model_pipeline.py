@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle
+import os
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
@@ -25,8 +26,11 @@ To run this script:
 $ python model_pipeline.py
 """
 
-# Load the processed data from the updated path
-def load_processed_data(file_path='../data/processed_data.csv'):
+# Load the processed data from the new path
+def load_processed_data(file_path=None):
+    if file_path is None:
+        # Adjust the path to point to the processed data file relative to this script
+        file_path = os.path.join(os.path.dirname(__file__), '../data/processed_data.csv')
     data = pd.read_csv(file_path)
     return data
 
@@ -67,10 +71,11 @@ def train_and_select_model(data):
     print(f"Test Accuracy: {accuracy_score(y_test, y_pred):.2f}")
     print(classification_report(y_test, y_pred))
 
-    # Save the best model to the updated path
-    with open('../models/final_model.pkl', 'wb') as f:
+    # Save the best model to the new path
+    model_save_path = os.path.join(os.path.dirname(__file__), '../models/final_model.pkl')
+    with open(model_save_path, 'wb') as f:
         pickle.dump(best_model, f)
-    print(f"{best_model_name} model saved to '../models/final_model.pkl'.")
+    print(f"{best_model_name} model saved to '{model_save_path}'.")
 
 # Main function to run the model pipeline
 if __name__ == "__main__":
