@@ -7,11 +7,9 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-
     steps:
       - name: Kódbázis klónozása
         uses: actions/checkout@v2
@@ -19,7 +17,7 @@ jobs:
       - name: Python beállítása
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.9'  # Módosítsd erre a 3.8 helyett
 
       - name: Függőségek telepítése
         run: |
