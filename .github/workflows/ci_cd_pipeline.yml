@@ -24,14 +24,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pyyaml  # Hozzáadva a yaml csomag telepítéséhez
 
       - name: Adatfeldolgozás futtatása
         run: |
-          python src/data_pipeline.py
+          python src/data_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
 
       - name: Modell betanítása és mentése
         run: |
-          python models/model_pipeline.py
+          python models/model_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
 
       - name: API tesztelése
         run: |
