@@ -1,0 +1,46 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kódbázis klónozása
+        uses: actions/checkout@v2
+
+      - name: Python beállítása
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Függőségek telepítése
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Adatfeldolgozás futtatása
+        run: |
+          python data_pipeline.py
+
+      - name: Modell betanítása és mentése
+        run: |
+          python model_pipeline.py
+
+      - name: API tesztelése
+        run: |
+          nohup uvicorn main:app --host 127.0.0.1 --port 8000 &
+          sleep 5
+          curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d '{"Pregnancies": 2, "Glucose": 120.0, "BloodPressure": 70.0, "SkinThickness": 20.0, "Insulin": 85.0, "BMI": 25.0, "DiabetesPedigreeFunction": 0.5, "Age": 30}'
+
+      - name: API leállítása
+        run: |
+          pkill uvicorn
+

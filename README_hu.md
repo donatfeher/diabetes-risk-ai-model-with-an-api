@@ -9,7 +9,7 @@ Győződj meg róla, hogy a **main.py** és a szükséges modellfájlok (példá
 Lépj be a terminálba, és lépj be abba a könyvtárba, ahol a FastAPI fájlod található. Telepítened kell néhány Python-csomagot:
 
 ```bash
-pip install fastapi uvicorn scikit-learn numpy
+pip install fastapi uvicorn scikit-learn numpy xgboost
 ```
 
 ### 3. Futtasd a FastAPI szervert

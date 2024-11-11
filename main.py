@@ -2,6 +2,8 @@ import pickle
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
+import pandas as pd
+from data_pipeline import feature_engineering, scale_data  # Használjuk a data_pipeline függvényeit
 import uvicorn
 import logging
 
@@ -12,10 +14,14 @@ logger = logging.getLogger(__name__)
 # A FastAPI alkalmazás inicializálása
 app = FastAPI()
 
-# Betöltjük a mentett modellt (például Random Forest)
-with open('final_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+# Modell betöltése
+try:
+    with open('final_model.pkl', 'rb') as f:
+        model = pickle.load(f)
     logger.info("Model loaded successfully.")
+except FileNotFoundError:
+    logger.error("Model file not found. Run model_pipeline.py to create it.")
+    model = None
 
 # Bemeneti adatmodell létrehozása
 class DiabetesInput(BaseModel):
@@ -28,27 +34,28 @@ class DiabetesInput(BaseModel):
     DiabetesPedigreeFunction: float
     Age: int
 
+# Adat előfeldolgozási függvény, amely a bemenetet a modellhez igazítja
+def preprocess_input(input_data: DiabetesInput):
+    # Adatok átalakítása DataFrame-é
+    data = pd.DataFrame([input_data.dict()])
+    
+    # Feature engineering és skálázás
+    data = feature_engineering(data)
+    data = scale_data(data)
+    
+    # Bemeneti adat átalakítása numpy tömbbé (modell predikcióhoz)
+    return data.values
+
 # API végpont a predikcióra
 @app.post("/predict")
 def predict_diabetes(input_data: DiabetesInput):
-    # A bemenet átalakítása numpy tömbbé
-    input_array = np.array([[input_data.Pregnancies, input_data.Glucose, input_data.BloodPressure,
-                             input_data.SkinThickness, input_data.Insulin, input_data.BMI,
-                             input_data.DiabetesPedigreeFunction, input_data.Age]])
+    if model is None:
+        return {"error": "Model is not loaded. Run model_pipeline.py to train the model."}
 
-    # Naplózás a bemenethez
-    logger.info(f"Input received: {input_array}")
-
-    # Ha a modell 9 jellemzőt vár, adjunk hozzá egy extra oszlopot (pl. alapértelmezett értékkel)
-    input_array = np.append(input_array, [[0]])  # Adj hozzá egy 9. jellemzőt
-    logger.info(f"Modified input with added feature: {input_array}")
-
-    # Predikció készítése
-    prediction = model.predict([input_array])
-
-    # Naplózás a predikcióhoz
-    logger.info(f"Prediction made: {prediction[0]}")
-
+    # Előfeldolgozás és predikció
+    processed_data = preprocess_input(input_data)
+    prediction = model.predict(processed_data)
+    
     return {"prediction": int(prediction[0])}
 
 # A FastAPI szerver indítása

@@ -1,0 +1,49 @@
+1. hét: Bevezetés az MLOps világába és DevOps elvek
+Témák: Áttekintés a DevOps és MLOps koncepciókról, különbségek és kapcsolódási pontok.
+Gyakorlat: A Python alapú MLOps eszközök bemutatása, bevezető feladatok.
+Cél: A képzés alapjainak és a technológiai keretrendszer bemutatása.
+
+2. hét: Production-Ready kód és Alapvető MLOps feladatok
+Témák: „Production-ready” kódok követelményei, MLOps dokumentációk és elvek.
+Gyakorlat: Példák és gyakorlatok Pythonban, alapvető kódstruktúrák létrehozása.
+Cél: Képessé válni olyan kód készítésére, ami készen áll a deployment-re és skálázhatóságra.
+Házifeladat: Nézd át a Pep8 style guideline-t.-Válassz ki egy notebookot, 
+ami machine learning modellfejlesztést tartalmaz(lehet pl. saját, Kaggle-rőlvagygithub-ról 
+másolt), és abból írj Pep8 szerint production ready kódot.
+
+3. hét: Experiment Tracking és Metaadatok kezelése
+Témák: Projektmenedzsment MLOps-ban, metaadat kezelés és nyomon követés, MLFlow bevezetése.
+Gyakorlat: Kísérleti eredmények és modellek nyomon követése MLFlow-val.
+Cél: Megérteni az adatmenedzsment fontosságát és a kísérleti eredmények nyomon követésének eszközeit.
+Házifeladat: Próbáld ki a pycaretet, építsfel benne egy machine learning modellt az általad 
+választott adathalmazon. Hasonlítsd össze az előző héten kapott eredményekkel.Mlflow-val 
+trackkelda kísérleteidet.
+
+4. hét: Production-ready ML pipeline-ok és REST API integráció
+Témák: PEP8 szabványok, ML pipeline-ok létrehozása, REST API-k bevezetése.
+Gyakorlat: Egyszerű pipeline és REST API létrehozása, kódolási szabványok alkalmazása.
+Cél: Elsajátítani az ML pipeline építés alapjait, API integrációt és kódolási szabványokat.
+Házifeladat: Egy általad választott tetszőleges jupyter notebookból (ami tartalmazza az adatok
+előfeldolgozását és az ML modell betanítását) készíts production-ready kódot. Amennyiben ezt az
+első heti házifeladatnál már megcsináltad, használhatod azt is. És építsd fel apipelineokat, 
+valamint hozz belőle létre egy REST API-t, train és predict végpontokat, valamint teszteld is 
+azokat. A teszt eredményéről (Swaggert, Postmantvagy pythont alkamazva) csatold a képet, valamint a
+repositoryt is. 
+
+5. hét: MLflow és Deployment Stratégiák
+Témák: Modellek deploy-álási stratégiái, különböző megközelítések, MLflow haladó gyakorlatok.
+Gyakorlat: Deployment gyakorlása MLflow segítségével.
+Cél: Alkalmazni tudni a különböző deployment stratégiákat az MLflow segítségével.
+Házifeladat: A már korábban felépítettpipelineokatfejleszd tovább mlflow-val. Az artifactokat 
+mentsd mlflow-val, train és predict végpont esetében is.
+
+6. hét: CICD és MLOps szintek megismerése
+Témák: CICD bevezetése MLOps-ban, technikai adósságok és termék érettségi szintek.
+Gyakorlat: CICD folyamat kialakítása a fejlesztési környezetben.
+Cél: Megérteni a folyamatos integráció és szállítás fontosságát az ML modellek élesítésében.
+
+7-8. hét: Záróprojekt és Felkészülés a Vizsgára
+Témák: Záróprojekt elvégzése és prezentáció, összefoglalás és vizsgára felkészülés.
+Gyakorlat: Teljes end-to-end MLOps folyamat összeállítása, önállóan egy esettanulmány alapján.
+Cél: Bizonyítani a megszerzett tudást és képesnek lenni egy teljes MLOps folyamat kivitelezésére a valós környezetben.
+Ez az ütemterv rugalmasan alakítható a csoport igényei és a tanulási tempó alapján.
