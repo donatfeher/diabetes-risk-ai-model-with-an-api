@@ -1,8 +1,3 @@
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler
-import os
-
 """
 data_pipeline.py
 
@@ -18,16 +13,21 @@ Key Steps:
 To run this script:
 $ python data_pipeline.py
 """
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+import yaml
+import os
 
-# Load data from the data directory
-def load_data(file_path=None):
-    # Define default path if no path is provided
-    if file_path is None:
-        file_path = os.path.join(os.path.dirname(__file__), '../data/diabetes.csv')
-    data = pd.read_csv(file_path)
+# Load configuration from config.yml
+with open("config.yml", "r") as config_file:
+    config = yaml.safe_load(config_file)
+
+def load_data():
+    data_path = config["paths"]["data_raw"]
+    data = pd.read_csv(data_path)
     return data
 
-# Handle missing values in specific columns
 def handle_missing_data(data):
     columns_with_missing_values = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
     for column in columns_with_missing_values:
@@ -35,7 +35,6 @@ def handle_missing_data(data):
         data[column] = data[column].fillna(data[column].mean())
     return data
 
-# Remove outliers using the IQR method
 def remove_outliers(data):
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)
@@ -43,7 +42,6 @@ def remove_outliers(data):
     data_cleaned = data[~((data < (Q1 - 1.5 * IQR)) | (data > (Q3 + 1.5 * IQR))).any(axis=1)]
     return data_cleaned
 
-# Feature engineering to create new columns
 def feature_engineering(data):
     data['BMI_Age_Interaction'] = data['BMI'] * data['Age']
     data['BMI_Squared'] = data['BMI'] ** 2
@@ -56,7 +54,6 @@ def feature_engineering(data):
     data['Glucose_Insulin'] = data['Glucose'] * data['Insulin']
     return data
 
-# Scale data for model training
 def scale_data(data):
     scaler = StandardScaler()
     scaled_columns = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 
@@ -66,18 +63,16 @@ def scale_data(data):
     data[scaled_columns] = scaler.fit_transform(data[scaled_columns])
     return data
 
-# Main processing function that combines all steps
-def process_data(file_path=None):
-    data = load_data(file_path)
+def process_data():
+    data = load_data()
     data = handle_missing_data(data)
     data = remove_outliers(data)
     data = feature_engineering(data)
     data = scale_data(data)
     return data
 
-# Run the script and save processed data
 if __name__ == "__main__":
     processed_data = process_data()
-    processed_data_path = os.path.join(os.path.dirname(__file__), '../data/processed_data.csv')
+    processed_data_path = config["paths"]["data_processed"]
     processed_data.to_csv(processed_data_path, index=False)
     print(f"Data processing complete. Processed data saved to '{processed_data_path}'.")

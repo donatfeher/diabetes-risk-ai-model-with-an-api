@@ -27,11 +27,11 @@ jobs:
 
       - name: Adatfeldolgozás futtatása
         run: |
-          python src/data_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
+          python src/data_pipeline.py
 
       - name: Modell betanítása és mentése
         run: |
-          python models/model_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
+          python models/model_pipeline.py
 
       - name: API tesztelése
         run: |

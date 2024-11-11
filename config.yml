@@ -1,0 +1,30 @@
+paths:
+  data_raw: "data/diabetes.csv"               # Nyers adat fájl elérési útja
+  data_processed: "data/processed_data.csv"    # Feldolgozott adat fájl elérési útja
+  model: "models/final_model.pkl"              # Mentett modell fájl elérési útja
+
+model_params:
+  test_size: 0.2                               # Teszt adatkészlet aránya
+  random_state: 42                             # Véletlenszerű állapot a reprodukálhatósághoz
+
+models:
+  KNN:
+    n_neighbors: [3, 5, 7]
+    weights: ["uniform", "distance"]
+  LogisticRegression:
+    max_iter: 200
+    C: [0.1, 1, 10]
+  DecisionTree:
+    max_depth: [3, 5, 7]
+  RandomForest:
+    n_estimators: [50, 100]
+    max_depth: [5, 7]
+  XGBoost:
+    n_estimators: [50, 100]
+    learning_rate: [0.1, 0.2]
+    max_depth: [3, 5]
+    eval_metric: "logloss"
+
+server:
+  host: "127.0.0.1"                            # FastAPI szerver hoszt beállítása
+  port: 8000                                   # FastAPI szerver port beállítása
