@@ -3,9 +3,24 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
 import pandas as pd
-from data_pipeline import feature_engineering, scale_data  # Használjuk a data_pipeline függvényeit
 import uvicorn
 import logging
+from src.data_pipeline import feature_engineering, scale_data
+
+"""
+main.py
+
+This is the main entry point of the FastAPI-based machine learning API.
+It loads a pre-trained machine learning model (final_model.pkl) and serves
+it via API endpoints.
+
+Key Endpoints:
+- /predict: Accepts input data as JSON and returns the prediction from the model.
+- /docs: Provides automatically generated API documentation.
+
+To run the API server:
+$ uvicorn main:app --reload
+"""
 
 # Naplózási konfiguráció
 logging.basicConfig(level=logging.INFO)
@@ -16,7 +31,7 @@ app = FastAPI()
 
 # Modell betöltése
 try:
-    with open('final_model.pkl', 'rb') as f:
+    with open('models/final_model.pkl', 'rb') as f:
         model = pickle.load(f)
     logger.info("Model loaded successfully.")
 except FileNotFoundError:

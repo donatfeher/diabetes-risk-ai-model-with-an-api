@@ -1,10 +1,34 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 
-# Adatok betöltése
-def load_data(file_path='diabetes.csv'):
+"""
+data_pipeline.py
+
+This script preprocesses and cleans the dataset used for training the machine
+learning model. It handles missing values, performs necessary transformations,
+and saves the processed data to 'processed_data.csv'.
+
+Key Steps:
+- Missing data handling: Fills missing values in specified columns.
+- Data transformation: Applies necessary data transformations.
+- Data saving: Saves the preprocessed data for further model training.
+
+To run this script:
+$ python data_pipeline.py
+"""
+
+def load_data(file_path='../data/diabetes.csv'):
     data = pd.read_csv(file_path)
+    return data
+
+def process_data(file_path='../data/diabetes.csv'):
+    data = load_data(file_path)
+    data = handle_missing_data(data)
+    data = remove_outliers(data)
+    data = feature_engineering(data)
+    data = scale_data(data)
     return data
 
 # Hiányzó adatok kezelése (például 0 értékek átlaggal pótlása)
@@ -12,7 +36,6 @@ def handle_missing_data(data):
     columns_with_missing_values = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
     for column in columns_with_missing_values:
         data[column] = data[column].replace(0, np.nan)
-        # Az inplace paraméter nélkül módosítjuk a DataFrame-et
         data[column] = data[column].fillna(data[column].mean())
     return data
 
@@ -48,16 +71,10 @@ def scale_data(data):
     return data
 
 # Fő függvény, amely végrehajtja az összes adatfeldolgozási lépést
-def process_data(file_path='diabetes.csv'):
-    data = load_data(file_path)
-    data = handle_missing_data(data)
-    data = remove_outliers(data)
-    data = feature_engineering(data)
-    data = scale_data(data)
-    return data
-
-# Ha közvetlenül futtatod a fájlt, akkor feldolgozza az adatokat, és elmenti őket
 if __name__ == "__main__":
     processed_data = process_data()
-    processed_data.to_csv('processed_data.csv', index=False)
-    print("Data processing complete. Processed data saved to 'processed_data.csv'.")
+
+    # Adatok mentése közvetlenül a ../data könyvtárba
+    output_path = '../data/processed_data.csv'
+    processed_data.to_csv(output_path, index=False)
+    print(f"Data processing complete. Processed data saved to '{output_path}'.")
