@@ -1,7 +1,7 @@
-import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+import os
 
 """
 data_pipeline.py
@@ -19,19 +19,15 @@ To run this script:
 $ python data_pipeline.py
 """
 
-def load_data(file_path='../data/diabetes.csv'):
+# Load data from the data directory
+def load_data(file_path=None):
+    # Define default path if no path is provided
+    if file_path is None:
+        file_path = os.path.join(os.path.dirname(__file__), '../data/diabetes.csv')
     data = pd.read_csv(file_path)
     return data
 
-def process_data(file_path='../data/diabetes.csv'):
-    data = load_data(file_path)
-    data = handle_missing_data(data)
-    data = remove_outliers(data)
-    data = feature_engineering(data)
-    data = scale_data(data)
-    return data
-
-# Hiányzó adatok kezelése (például 0 értékek átlaggal pótlása)
+# Handle missing values in specific columns
 def handle_missing_data(data):
     columns_with_missing_values = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
     for column in columns_with_missing_values:
@@ -39,7 +35,7 @@ def handle_missing_data(data):
         data[column] = data[column].fillna(data[column].mean())
     return data
 
-# Outlierek kezelése IQR módszerrel
+# Remove outliers using the IQR method
 def remove_outliers(data):
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)
@@ -47,7 +43,7 @@ def remove_outliers(data):
     data_cleaned = data[~((data < (Q1 - 1.5 * IQR)) | (data > (Q3 + 1.5 * IQR))).any(axis=1)]
     return data_cleaned
 
-# Új jellemzők létrehozása (feature engineering)
+# Feature engineering to create new columns
 def feature_engineering(data):
     data['BMI_Age_Interaction'] = data['BMI'] * data['Age']
     data['BMI_Squared'] = data['BMI'] ** 2
@@ -60,7 +56,7 @@ def feature_engineering(data):
     data['Glucose_Insulin'] = data['Glucose'] * data['Insulin']
     return data
 
-# Adatok skálázása (standardizálás)
+# Scale data for model training
 def scale_data(data):
     scaler = StandardScaler()
     scaled_columns = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 
@@ -70,11 +66,18 @@ def scale_data(data):
     data[scaled_columns] = scaler.fit_transform(data[scaled_columns])
     return data
 
-# Fő függvény, amely végrehajtja az összes adatfeldolgozási lépést
+# Main processing function that combines all steps
+def process_data(file_path=None):
+    data = load_data(file_path)
+    data = handle_missing_data(data)
+    data = remove_outliers(data)
+    data = feature_engineering(data)
+    data = scale_data(data)
+    return data
+
+# Run the script and save processed data
 if __name__ == "__main__":
     processed_data = process_data()
-
-    # Adatok mentése közvetlenül a ../data könyvtárba
-    output_path = '../data/processed_data.csv'
-    processed_data.to_csv(output_path, index=False)
-    print(f"Data processing complete. Processed data saved to '{output_path}'.")
+    processed_data_path = os.path.join(os.path.dirname(__file__), '../data/processed_data.csv')
+    processed_data.to_csv(processed_data_path, index=False)
+    print(f"Data processing complete. Processed data saved to '{processed_data_path}'.")
