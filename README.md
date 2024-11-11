@@ -2,7 +2,7 @@
 
 [Magyar verzió (Hungarian)](README_hu.md)
 
-This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Below are the steps to set up and run the code in your environment.
+This documentation provides clear steps for others to easily run the FastAPI-based machine learning model. Follow these steps to set up and run the code in your environment.
 
 ### 1. Clone or Download the Code Locally
 
@@ -10,15 +10,15 @@ Ensure that **main.py** and the required model files (e.g., `final_model.pkl`) a
 
 ### 2. Install Required Packages
 
-Open your terminal and navigate to the directory where your FastAPI file is located. You'll need to install a few Python packages:
+Navigate to the directory where your FastAPI file is located. Install the required Python packages with specific versions for compatibility:
 
 ```bash
-pip install fastapi uvicorn scikit-learn numpy
+pip install fastapi==0.112.2 uvicorn==0.30.0 scikit-learn==1.5.1 pandas==2.2.2 numpy==1.25.0 xgboost==2.1.1
 ```
 
 ### 3. Run the FastAPI Server
 
-You can start the FastAPI server using the following command. Make sure that `main` is the name of the file where your FastAPI application is defined:
+Start the FastAPI server with the following command. Make sure that `main` is the name of the file where your FastAPI application is defined:
 
 ```bash
 uvicorn main:app --reload
@@ -28,7 +28,7 @@ This will launch the server, which listens on `http://127.0.0.1:8000`.
 
 ### 4. API Documentation
 
-FastAPI automatically generates an interactive API documentation interface. You can access it in your browser at the following URL:
+FastAPI automatically generates an interactive API documentation interface. Access it in your browser at:
 
 ```bash
 http://127.0.0.1:8000/docs
@@ -44,7 +44,7 @@ To make a prediction, use a `POST` request to the following URL:
 http://127.0.0.1:8000/predict
 ```
 
-You can send a sample request with the following JSON payload:
+Send a sample request with this JSON payload:
 
 ```json
 {
@@ -71,11 +71,11 @@ The server will return the prediction in JSON format, such as:
 
 ### Common Errors and Solutions
 
-1. **`ModuleNotFoundError: No module named 'fastapi'`**: Make sure the required packages are installed in your Python environment (`pip install fastapi uvicorn`).
+1. **`ModuleNotFoundError: No module named 'fastapi'`**: Ensure the required packages are installed with correct versions (`pip install fastapi==0.112.2 uvicorn==0.30.0`).
 
-2. **`ValueError: X has 8 features, but RandomForestClassifier is expecting 9 features`**: The model expects more input data. Check the model's functionality and the input data.
+2. **`ValueError: X has 8 features, but RandomForestClassifier is expecting 9 features`**: This error indicates the model expects more input data. Double-check the model requirements and input data.
 
-3. **Port Conflict**: If the `8000` port is already in use, try using a different port:
+3. **Port Conflict**: If port `8000` is in use, try a different port:
 
    ```bash
    uvicorn main:app --reload --port 8080

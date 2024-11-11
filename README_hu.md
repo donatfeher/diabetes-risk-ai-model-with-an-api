@@ -1,3 +1,7 @@
+# FastAPI alapú gépi tanulás modell dokumentációja
+
+[English version (Angol verzió)](README_en.md)
+
 Az alábbi dokumentáció alapján mások is könnyen futtathatják a FastAPI alapú gépi tanulás modellt. Íme a lépések, hogyan futtassák a kódot a saját környezetükben.
 
 ### 1. Klónozd vagy másold a kódot a helyi gépre
@@ -6,10 +10,10 @@ Győződj meg róla, hogy a **main.py** és a szükséges modellfájlok (példá
 
 ### 2. Telepítsd a szükséges csomagokat
 
-Lépj be a terminálba, és lépj be abba a könyvtárba, ahol a FastAPI fájlod található. Telepítened kell néhány Python-csomagot:
+Lépj be a terminálba, és lépj abba a könyvtárba, ahol a FastAPI fájlod található. Telepítsd a szükséges Python-csomagokat pontos verziókkal:
 
 ```bash
-pip install fastapi uvicorn scikit-learn numpy xgboost
+pip install fastapi==0.112.2 uvicorn==0.30.0 scikit-learn==1.5.1 pandas==2.2.2 numpy==1.25.0 xgboost==2.1.1
 ```
 
 ### 3. Futtasd a FastAPI szervert
@@ -67,17 +71,12 @@ A szerver a predikciót JSON formátumban adja vissza, például így:
 
 ### Gyakori hibák és megoldások
 
-1. **`ModuleNotFoundError: No module named 'fastapi'`**: Ellenőrizd, hogy a szükséges csomagokat telepítetted a Python környezetedbe (`pip install fastapi uvicorn`).
-   
+1. **`ModuleNotFoundError: No module named 'fastapi'`**: Ellenőrizd, hogy a szükséges csomagokat telepítetted a Python környezetedbe a megadott verziókkal (`pip install fastapi==0.112.2 uvicorn==0.30.0`).
+
 2. **`ValueError: X has 8 features, but RandomForestClassifier is expecting 9 features`**: A modelled több bemeneti adatot vár. Ellenőrizd a modell működését és a bemeneti adatokat.
 
 3. **Port foglaltság**: Ha a `8000` port foglalt, próbálj egy másik portot használni:
-   
+
    ```bash
    uvicorn main:app --reload --port 8080
    ```
-
-### Összegzés
-
-Ezekkel a lépésekkel mások is könnyen futtathatják a kódodat, és használhatják a gépi tanulási modellt FastAPI-n keresztül. Ha további kérdés merülne fel, kérlek, jelezd!
-
