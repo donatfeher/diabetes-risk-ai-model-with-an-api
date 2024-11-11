@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
       - name: Python beállítása
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # Módosítsd erre a 3.8 helyett
+          python-version: '3.9'
 
       - name: Függőségek telepítése
         run: |
@@ -26,11 +27,11 @@ jobs:
 
       - name: Adatfeldolgozás futtatása
         run: |
-          python data_pipeline.py
+          python src/data_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
 
       - name: Modell betanítása és mentése
         run: |
-          python model_pipeline.py
+          python models/model_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
 
       - name: API tesztelése
         run: |
@@ -41,4 +42,3 @@ jobs:
       - name: API leállítása
         run: |
           pkill uvicorn
-
