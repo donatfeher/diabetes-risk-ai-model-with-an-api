@@ -26,6 +26,10 @@ jobs:
           pip install -r requirements.txt
           pip install pyyaml  # Hozzáadva a yaml csomag telepítéséhez
 
+      - name: Tesztek futtatása
+        run: |
+          python -m unittest discover -s tests -p "test_*.py"
+
       - name: Adatfeldolgozás futtatása
         run: |
           python src/data_pipeline.py  # Módosítva az új mappastruktúrának megfelelően
