@@ -9,7 +9,6 @@ This documentation provides clear steps for running the FastAPI-based machine le
 Here's a high-level overview of the project structure, showing key files and folders:
 
 ```plaintext
-.
 ├── README.md                # Project documentation in English
 ├── main.py                  # Entry point for the FastAPI server
 ├── requirements.txt         # List of dependencies
@@ -77,16 +76,32 @@ Send a sample request with this JSON payload:
 
 ```json
 {
-  "Pregnancies": 2,
-  "Glucose": 120.0,
-  "BloodPressure": 70.0,
-  "SkinThickness": 20.0,
-  "Insulin": 85.0,
-  "BMI": 25.0,
-  "DiabetesPedigreeFunction": 0.5,
-  "Age": 30
+  "Pregnancies": 6,
+  "Glucose": 148,
+  "BloodPressure": 72,
+  "SkinThickness": 35,
+  "Insulin": 0,  
+  "BMI": 33.6,
+  "DiabetesPedigreeFunction": 0.627,
+  "Age": 50
 }
 ```
+
+```
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+    "Pregnancies": 6,
+    "Glucose": 148,
+    "BloodPressure": 72,
+    "SkinThickness": 35,
+    "Insulin": 0,  
+    "BMI": 33.6,
+    "DiabetesPedigreeFunction": 0.627,
+    "Age": 50
+}'
+```
+
 
 ## 6. Server Response
 

@@ -1,5 +1,5 @@
 paths:
-  data_raw: "data/diabetes.csv"               # Nyers adat fájl elérési útja
+  data_raw: "data/diabetes.csv"                # Nyers adat fájl elérési útja
   data_processed: "data/processed_data.csv"    # Feldolgozott adat fájl elérési útja
   model: "models/final_model.pkl"              # Mentett modell fájl elérési útja
 

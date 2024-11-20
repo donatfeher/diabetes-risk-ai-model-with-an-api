@@ -9,7 +9,6 @@ Az alábbi dokumentáció alapján mások is könnyen futtathatják a FastAPI al
 Az alábbiakban a projekt fontosabb fájljainak és mappáinak áttekintése:
 
 ```plaintext
-.
 ├── README.md                # Projekt dokumentáció (angolul)
 ├── main.py                  # FastAPI szerver fő belépési pontja
 ├── requirements.txt         # Függőségek listája
