@@ -39,7 +39,7 @@ def train_and_select_model(data):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # SMOTE használata az osztályok kiegyensúlyozásához
-    smote = SMOTE(random_state=42)
+    smote = SMOTE(k_neighbors=1, random_state=42)  # k_neighbors=1 hozzáadása
     X_train, y_train = smote.fit_resample(X_train, y_train)
 
     models = {
