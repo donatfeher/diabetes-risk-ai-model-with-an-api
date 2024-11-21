@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/86679c4168844fe4becfefaf772b1d45/artifacts
+end_time: 1732230965946
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 86679c4168844fe4becfefaf772b1d45
+run_name: rare-croc-409
+run_uuid: 86679c4168844fe4becfefaf772b1d45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230964216
+status: 4
+tags: []
+user_id: feherdonat

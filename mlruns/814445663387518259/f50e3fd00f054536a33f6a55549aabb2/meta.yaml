@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/f50e3fd00f054536a33f6a55549aabb2/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: f50e3fd00f054536a33f6a55549aabb2
+run_name: Extreme Gradient Boosting
+run_uuid: f50e3fd00f054536a33f6a55549aabb2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230963993
+status: 1
+tags: []
+user_id: feherdonat

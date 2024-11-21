@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/8bb353b255004f79a6615fee7b7490c4/artifacts
+end_time: 1732231009097
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 8bb353b255004f79a6615fee7b7490c4
+run_name: Extra Trees Classifier
+run_uuid: 8bb353b255004f79a6615fee7b7490c4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231009056
+status: 3
+tags: []
+user_id: feherdonat

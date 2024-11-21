@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/2c581fea3ba34b2f925f15b787831c6f/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 2c581fea3ba34b2f925f15b787831c6f
+run_name: K Neighbors Classifier
+run_uuid: 2c581fea3ba34b2f925f15b787831c6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230964059
+status: 1
+tags: []
+user_id: feherdonat

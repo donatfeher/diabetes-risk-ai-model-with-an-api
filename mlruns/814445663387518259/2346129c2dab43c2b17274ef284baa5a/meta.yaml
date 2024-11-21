@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/2346129c2dab43c2b17274ef284baa5a/artifacts
+end_time: 1732231133995
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 2346129c2dab43c2b17274ef284baa5a
+run_name: Dummy Classifier
+run_uuid: 2346129c2dab43c2b17274ef284baa5a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231133949
+status: 3
+tags: []
+user_id: feherdonat

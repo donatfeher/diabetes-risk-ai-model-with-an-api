@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/becb2ee8f88646e5bc0af4c27c99dce4/artifacts
+end_time: 1732231132756
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: becb2ee8f88646e5bc0af4c27c99dce4
+run_name: Logistic Regression
+run_uuid: becb2ee8f88646e5bc0af4c27c99dce4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231132717
+status: 3
+tags: []
+user_id: feherdonat

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/ad63b1e31e5f425da4b014956e68ea76/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: ad63b1e31e5f425da4b014956e68ea76
+run_name: Light Gradient Boosting Machine
+run_uuid: ad63b1e31e5f425da4b014956e68ea76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230884481
+status: 1
+tags: []
+user_id: feherdonat

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/4a39c60a7c69473484de62d6fe534035/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 4a39c60a7c69473484de62d6fe534035
+run_name: Session Initialized b0d8
+run_uuid: 4a39c60a7c69473484de62d6fe534035
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230955681
+status: 1
+tags: []
+user_id: feherdonat

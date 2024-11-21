@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/f55abd3439d54a1a93e67b87f9bf4727/artifacts
+end_time: 1732230886895
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: f55abd3439d54a1a93e67b87f9bf4727
+run_name: sneaky-penguin-865
+run_uuid: f55abd3439d54a1a93e67b87f9bf4727
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230884807
+status: 4
+tags: []
+user_id: feherdonat

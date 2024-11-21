@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/20a12192ba7d4598bbfac383f231f154/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 20a12192ba7d4598bbfac383f231f154
+run_name: Quadratic Discriminant Analysis
+run_uuid: 20a12192ba7d4598bbfac383f231f154
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230884580
+status: 1
+tags: []
+user_id: feherdonat

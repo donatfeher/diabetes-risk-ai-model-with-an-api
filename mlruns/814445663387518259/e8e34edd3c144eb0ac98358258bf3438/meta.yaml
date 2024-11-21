@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/e8e34edd3c144eb0ac98358258bf3438/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: e8e34edd3c144eb0ac98358258bf3438
+run_name: Naive Bayes
+run_uuid: e8e34edd3c144eb0ac98358258bf3438
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230963964
+status: 1
+tags: []
+user_id: feherdonat

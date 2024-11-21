@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/10c8e0918ee84868b151ac1cc50cc4e7/artifacts
+end_time: 1732231009589
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 10c8e0918ee84868b151ac1cc50cc4e7
+run_name: Gradient Boosting Classifier
+run_uuid: 10c8e0918ee84868b151ac1cc50cc4e7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231009545
+status: 3
+tags: []
+user_id: feherdonat

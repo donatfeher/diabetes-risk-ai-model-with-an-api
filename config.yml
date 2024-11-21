@@ -28,3 +28,20 @@ models:
 server:
   host: "127.0.0.1"                            # FastAPI szerver hoszt beállítása
   port: 8000                                   # FastAPI szerver port beállítása
+
+# Train with pycaret
+pycaret:
+  session_id: 123
+  normalize: true
+  normalize_method: "zscore"
+
+data:
+  path: "data/processed_data.csv"
+  target_column: "Outcome"
+
+mlflow:
+  tracking_uri: "file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns"
+  experiment_name: "default"
+
+output:
+  model_save_path: "models/pycaret_best_model"

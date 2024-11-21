@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/3b87350174e941f0a47e46744655dea6/artifacts
+end_time: 1732231012613
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 3b87350174e941f0a47e46744655dea6
+run_name: mercurial-cub-196
+run_uuid: 3b87350174e941f0a47e46744655dea6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231010507
+status: 4
+tags: []
+user_id: feherdonat

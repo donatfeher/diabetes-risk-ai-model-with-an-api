@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/b89e6da40f9b47638e574f9b89164dab/artifacts
+end_time: 1732231133775
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: b89e6da40f9b47638e574f9b89164dab
+run_name: SVM - Linear Kernel
+run_uuid: b89e6da40f9b47638e574f9b89164dab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231133709
+status: 3
+tags: []
+user_id: feherdonat

@@ -8,6 +8,7 @@ import pandas as pd
 from src.data_pipeline import feature_engineering, scale_data
 import subprocess
 import uvicorn
+from models.train_with_pycaret import train_with_pycaret, load_processed_data # pycaret
 
 # Logger beállítása
 logging.basicConfig(level=logging.INFO)
@@ -87,6 +88,21 @@ def train():
     except Exception as e:
         logger.error("Failed to execute training: %s", str(e))
         return {"error": f"Failed to execute training: {str(e)}"}
+
+# Pycaret
+@app.post("/train_pycaret")
+def train_pycaret():
+    """
+    Train a model using PyCaret and track experiments with MLflow.
+    """
+    try:
+        data = load_processed_data()
+        model_path = train_with_pycaret(data)
+        return {"message": "PyCaret training completed.", "model_path": model_path}
+    except Exception as e:
+        logger.error("Error during PyCaret training: %s", str(e))
+        return {"error": f"PyCaret training failed: {str(e)}"}
+
 
 # Fő futtatás
 if __name__ == "__main__":

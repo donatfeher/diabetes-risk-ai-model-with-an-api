@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/f1ba014a6829444e9a7bfe8e2e64fb74/artifacts
+end_time: 1732231010329
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: f1ba014a6829444e9a7bfe8e2e64fb74
+run_name: Decision Tree Classifier
+run_uuid: f1ba014a6829444e9a7bfe8e2e64fb74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231010290
+status: 3
+tags: []
+user_id: feherdonat

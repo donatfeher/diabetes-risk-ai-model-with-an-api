@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/3dad368814164ed99cabd8480b45525a/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: 3dad368814164ed99cabd8480b45525a
+run_name: Random Forest Classifier
+run_uuid: 3dad368814164ed99cabd8480b45525a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732230963869
+status: 1
+tags: []
+user_id: feherdonat

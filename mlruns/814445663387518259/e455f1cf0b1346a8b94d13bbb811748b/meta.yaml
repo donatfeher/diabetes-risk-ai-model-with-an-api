@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munkák/df-cubix-vizsgaf/mlruns/814445663387518259/e455f1cf0b1346a8b94d13bbb811748b/artifacts
+end_time: 1732231132571
+entry_point_name: ''
+experiment_id: '814445663387518259'
+lifecycle_stage: active
+run_id: e455f1cf0b1346a8b94d13bbb811748b
+run_name: Ridge Classifier
+run_uuid: e455f1cf0b1346a8b94d13bbb811748b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732231132440
+status: 3
+tags: []
+user_id: feherdonat

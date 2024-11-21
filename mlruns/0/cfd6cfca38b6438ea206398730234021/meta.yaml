@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/feherdonat/Munka%CC%81k/df-cubix-vizsgaf/mlruns/0/cfd6cfca38b6438ea206398730234021/artifacts
+end_time: 1732221367377
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cfd6cfca38b6438ea206398730234021
+run_name: gaudy-bass-835
+run_uuid: cfd6cfca38b6438ea206398730234021
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732221364820
+status: 3
+tags: []
+user_id: feherdonat
