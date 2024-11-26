@@ -124,3 +124,7 @@ The server will return the prediction in JSON format, such as:
    ```bash
    uvicorn main:app --reload --port 8080
    ```
+
+mlflow ui
+vagy
+mlflow ui --port 8000
